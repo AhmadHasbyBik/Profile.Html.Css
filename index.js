@@ -11,8 +11,10 @@ app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 app.use("/", appRouting);
 
-app.listen(8000, () => {
-  console.log("Application running in port : 8080");
-});
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () => {
+    console.log(`Server is up and listening at port: ${PORT}`)
+})
+
 
 module.exports = app;
